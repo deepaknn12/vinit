@@ -5,53 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
-        div{
+        div {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+
+        /* Image ke upar text ke liye */
+        .image-container {
+            position: relative;
+            width: 450px;
+            height: 500px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Image ke upar text */
+        .image-container .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: red;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        /* Caption styling */
+        caption {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* Button styling */
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        /* Message styling */
+        .message {
+            font-size: 24px;
+            color: green;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .no-message {
+            font-size: 24px;
+            color: red;
+            font-weight: bold;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
     <div>
-        <h1 style="font-size: 50px;">Vinit  Yadav</h1>
+        <h1 style="font-size: 50px;">Vinit Yadav</h1>
     
-    <blockquote style="font-size: 50px; color: blue; font-weight: bold;">"Jay Bheem"</blockquote>
-    <img src="./image.png" alt="htt"
-    width="450"
-    height="500"
-    />
-    <caption><br/> Vinit Yadav
-    </caption>
+        <blockquote style="font-size: 50px; color: blue; font-weight: bold;">"Jay Bheem"</blockquote>
+        
+        <!-- Image ke upar text -->
+        <div class="image-container">
+            <img src="./image.png" alt="htt" />
+            <div class="overlay-text">Kya koi mera gand lega?</div>
+        </div>
 
-    <h2><th>Biography</th></h2>
-    <ul><li>Btech 4th Yr Student</li>
-    <li>Competetive programmar</li>
-    <li>Java Student</li>
-    <li>TA at coding ninjas</li>
-    <li>5 star at codechef</li>
-    <li>Topper At codestudio</li>
-    <li>Good learner</li>
-    <li>Code debuger</li>
-    <li>Teacher</li>
-    <li>Web developer</li>
-    <li>Senior Data Scientist</li>
-</ul>
+        <caption>Vinit Yadav</caption>
 
-    <h2><th>Acheivement</th></h2>
-    <ul>
-        <li>
-        Complete 10th in Yr 2019
-    </li>
-     
-    <li>Complete 12th in Yr 2021</li>
-    <li>Complete Java Intro+DSA in Yr 2022</li>
-    <li>Complete Competetive programming using cpp in Yr 2023</li>
-    <li>Complete TA ship 1 July 2024 At coding ninjas</li>
-    <li>Complete nothing 
-    </ul>
+        <h2>Biography</h2>
+        <ul>
+            <li>Btech 4th Yr Student</li>
+            <li>Competitive programmer</li>
+            <li>Java Student</li>
+            <li>TA at coding ninjas</li>
+            <li>5 star at codechef</li>
+            <li>Topper At codestudio</li>
+            <li>Good learner</li>
+            <li>Code debugger</li>
+            <li>Teacher</li>
+            <li>Web developer</li>
+            <li>Senior Data Scientist</li>
+        </ul>
+
+        <h2>Achievement</h2>
+        <ul>
+            <li>Complete 10th in Yr 2019</li>
+            <li>Complete 12th in Yr 2021</li>
+            <li>Complete Java Intro+DSA in Yr 2022</li>
+            <li>Complete Competitive programming using cpp in Yr 2023</li>
+            <li>Complete TA ship 1 July 2024 at coding ninjas</li>
+            <li>Complete nothing</li>
+        </ul>
+
+        <!-- Buttons and message container -->
+        <div class="button-container">
+            <button onclick="showYesMessage()">Yes</button>
+            <button onclick="showNoMessage()">No</button>
+            <div id="message" class="message"></div>
+        </div>
     </div>
+
+    <script>
+        // Yes button ke liye message show karne ka function
+        function showYesMessage() {
+            document.getElementById('message').innerHTML = 'Thank you mera gand lene ke liye';
+            document.getElementById('message').className = 'message';
+        }
+
+        // No button ke liye message show karne ka function
+        function showNoMessage() {
+            document.getElementById('message').innerHTML = 'Bhai le le free me de rha hu';
+            document.getElementById('message').className = 'no-message';
+        }
+    </script>
 
 </body>
 </html>
